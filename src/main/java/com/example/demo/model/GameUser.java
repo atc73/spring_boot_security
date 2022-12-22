@@ -81,4 +81,11 @@ public class GameUser implements UserDetails {
     public Collection<? extends GrantedAuthority> getAuthorities() {
         return this.roleList.stream().map(role -> new SimpleGrantedAuthority(role.getName().name())).collect(Collectors.toList());
     }
+
+    public void setRoleList(List<Role> roleList) {
+    }
+
+    public List<Role> getRoleList() {
+        return roleList;
+    }
 }
